@@ -14,15 +14,27 @@ pip uninstall tornado
 pip install tornado==5.1.1
 ```
 
+
 # 配置
-在[airflow配置文件](airflow.cfg)配置了以下项：
+- 在[airflow配置文件](airflow.cfg)配置了以下项：
+    ```
+    default_timezone = Asia/Shanghai
+    
+    sql_alchemy_conn = mysql://root:123456@127.0.0.1/vms_airflow?charset=utf8
+    executor = CeleryExecutor
+    broker_url = redis://localhost:6379/0
+    result_backend = redis://localhost:6379/0
+    
+    visibility_timeout = 21600
+    ```
+- 环境变量
+    ```
+    export AIRFLOW_HOME=$PWD
+    ```
+
+# 启动初始化
 ```
-default_timezone = Asia/Shanghai
-
-sql_alchemy_conn = mysql://root:123456@127.0.0.1/vms_airflow?charset=utf8
-executor = CeleryExecutor
-broker_url = redis://localhost:6379/0
-result_backend = redis://localhost:6379/0
-
-visibility_timeout = 21600
+airflow initdb
+airflow webserver -p 8080
+airflow scheduler
 ```
