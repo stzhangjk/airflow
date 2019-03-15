@@ -32,6 +32,8 @@ pip install tornado==5.1.1
     export AIRFLOW_HOME=$PWD
     ```
 
+>You can also set options with environment variables by using this format: $AIRFLOW__{SECTION}__{KEY} (note the double underscores).
+
 # 启动初始化
 ```
 airflow initdb
