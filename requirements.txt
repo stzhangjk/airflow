@@ -50,7 +50,7 @@ ordereddict==1.1
 pandas==0.24.1
 pendulum==1.4.4
 psutil==5.6.1
-Pygments==2.3.1
+Pygments==2.7.4
 python-daemon==2.1.2
 python-dateutil==2.8.0
 python-editor==1.0.4
